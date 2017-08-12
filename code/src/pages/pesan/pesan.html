@@ -1,0 +1,36 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>pesan</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+        <ion-item>
+            <ion-label floating>Pilih Jenis Air</ion-label>
+            <ion-select [(ngModel)]="subkategori">
+                <ion-option *ngFor="let sub of subkategori" value="{{sub.id}}">{{sub.nama}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Jumlah</ion-label>
+            <ion-input type="number" [(ngModel)]="jumlah" name="jumlah" min="0" max="20"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Jenis Pengiriman</ion-label>
+            <ion-select [(ngModel)]="pengiriman" name="pengiriman">
+            	<ion-option value="cod">COD -- (+ Rp 2.000,-)</ion-option>
+            	<ion-option value="take">Ambil di toko -- (free)</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+{{pengiriman}}
+    <div padding>
+        <button ion-button block (click)="insertDataPesanan();" >Pesan</button>
+    </div>
+</ion-content>
+

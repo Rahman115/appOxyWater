@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <ion-card>
+    <img src="assets/img/bg_ (1).jpg"/>
+    <div class="card-title">OXY WATER</div>
+    <div class="card-subtitle">Solusi pembelian galon on-line</div>
+  </ion-card>
+
+  <ion-grid>
+  <ion-row>
+  <ion-col  *ngFor = "let btn of btnKategori">
+  <button (click)="getPesan(btn.id);" ion-button full item-end icon-left  >
+    <ion-icon name="chatbubbles"></ion-icon>  {{btn.nama}}</button>
+  </ion-col>
+  	
+  </ion-row>
+  
+</ion-grid>
+</ion-content>
